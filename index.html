@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>城市賓果卡 - 清單與生成系統</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    nav button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    nav button:hover {
+      background-color: #0056b3;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    .continent-header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>城市賓果卡 - 五大洲清單</h1>
+  <nav>
+    <button onclick="showSection('list')">城市清單</button>
+    <button onclick="showSection('bingo')">賓果卡生成</button>
+  </nav>
+
+  <!-- 城市清單分頁 -->
+  <section id="list" class="active">
+    <div id="city-list"></div>
+  </section>
+  
+  <!-- 賓果卡生成分頁 -->
+  <section id="bingo" >
+    <div class="continent-options">
+      <label><input type="checkbox" id="asia" checked> 亞洲</label>
+      <label><input type="checkbox" id="europe" checked> 歐洲</label>
+      <label><input type="checkbox" id="america" checked> 美洲</label>
+      <label><input type="checkbox" id="africa" checked> 非洲</label>
+      <label><input type="checkbox" id="oceania" checked> 大洋洲</label>
+    </div>
+    <button class="btn" onclick="generateBingoCard()">生成賓果卡</button>
+    <table id="bingo-card"></table>
+  </section>
+
+  <script src="game1.js"></script>
+</body>
+</html>
